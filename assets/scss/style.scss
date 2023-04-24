@@ -1,7 +1,7 @@
 /*
-Theme Name: joemo.
-Author: marketify
-Support: marketifyteam@gmail.com
+Theme Name: Aiza
+Author: Domainlee
+Support: domainlee.niit@gmail.com
 Description: Template personal for blog , my cv, resume ...
 Version: 1.0.0
 */
@@ -25,20 +25,18 @@ Version: 1.0.0
 */
 
 /* 1. Start Theme Default CSS */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 
 $color-white: #FFFFFF;
-$color-black: #000000;
-$color-grey: #666666;
-$color-yellow: #ffcf19;
+$color-black: #2E2E2E;
+$color-yellow: #E8FE51;
 
 body {
     font-weight: 300;
-    background-color: $color-white;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;;
     transition: all 0.5s ease;
+    background-image: url('../img/bg_main.jpg');
+    background-size: contain;
 }
 html {
     scroll-padding-top: 0;
@@ -64,48 +62,10 @@ a:hover {
     padding: 40px 50px;
 }
 .heading-default {
-    margin: 0 auto 70px;
-    letter-spacing: 1px;
-    font-size: 38px;
-    font-weight: 400;
-    font-family: 'Abril Fatface', cursive;
-    text-align: center;
-    position: relative;
-    display: table;
-    &:after {
-        content: '';
-        display: block;
-        width: 0;
-        height: 2px;
-        margin: 5px 0 0;
-        background-color: $color-yellow;
-        transition: width 1.5s ease-in-out;
-    }
-    &.is-on {
-        &:after {
-            width: 100%;
-        }
-    }
+
 }
 .heading-default__small {
-    margin: 0 0 20px;
-    padding: 3px 0 3px 20px;
-    text-transform: uppercase;
-    font-size: 16px;
-    border-left: 3px solid;
-    font-weight: 500;
-    i {
-        margin: 0 10px 0 0;
-        width: 30px;
-        height: 25px;
-        display: inline-flex;
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        background-color: #FFF;
-        color: #000;
-    }
+
 }
 /* End Theme Default CSS */
 
@@ -155,627 +115,6 @@ a:hover {
 }
 /** 2. End loading **/
 
-/** 3. Start Header **/
-.header {
-    padding: 40px;
-    width: 50%;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    background-color: #d8cec4;
-    z-index: 2;
-    .header__logo {
-        margin: 0;
-        img {
-            width: 100px;
-            height: auto;
-        }
-    }
-    .header__name {
-        font-size: 55px;
-        font-family: "Abril Fatface",cursive;
-        .wrap {
-            border-bottom: 4px solid $color-yellow;
-        }
-    }
-    .header__position {
-        font-family: 'DM Serif Text', serif;
-        font-size: 21px;
-        font-style: italic;
-    }
-    .header__one {
-        z-index: 3;
-        position: relative;
-    }
-    .header__menu {
-        text-align: right;
-        position: absolute;
-        right: 50px;
-        top: -50px;
-        bottom: 0;
-        margin: auto;
-        display: flex;
-        .header__navigation {
-            li {
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.5s ease;
-                transform: translate(20px, 0px);
-                a {
-                    padding: 8px 0;
-                    display: inline-block;
-                    color: $color-black;
-                    font-size: 20px;
-                    font-family: "DM Serif Text",serif;
-                    transition: color 0s ease;
-                    &.active {
-                        color: $color-white;
-                        font-style: italic;
-                    }
-                }
-                @for $i from 1 through 8 {
-                    &:nth-child(#{$i}) {
-                        transition-delay:(#{($i+1)*0.1s});
-                    }
-                }
-                .nav-open-js & {
-                    opacity: 1;
-                    visibility: visible;
-                    transform: translate(0, 0px);
-                }
-            }
-        }
-    }
-}
-/** 3. End Header **/
-
-/** 4. Start About me **/
-.about-me {
-    .about-me__avatar {
-        width: 150px;
-        height: 150px;
-        background-size: 120%;
-        background-position: top center;
-        transition: all 0.8s ease;
-        &:after {
-            content: '';
-            margin: auto;
-            width: 50px;
-            height: 1px;
-            display: inline-block;
-            position: absolute;
-            left: -100%;
-            right: -100%;
-            bottom: -100%;
-            top: -100%;
-            -webkit-transform: rotate(-32deg);
-            -moz-transform: rotate(-32deg);
-            -o-transform: rotate(-32deg);
-            -ms-transform: rotate(-32deg);
-            transform: rotate(-32deg);
-            transition: width 0.8s ease;
-            z-index: -1;
-            background-color: $color-black;
-            opacity: 0;
-        }
-    }
-    .about-me__avatar--custom.is-on  {
-        .about-me__avatar {
-            background-size: 100%;
-            &:after {
-                width: 300px;
-                opacity: 1;
-            }
-        }
-    }
-    .about-me__list {
-        margin: 0 0 2.5rem;
-        .about-me__item {
-            padding: 20px 0;
-            text-align: center;
-            flex: 1;
-            position: relative;
-            &:before {
-                content: '';
-                height: 0;
-                width: 1px;
-                display: inline-block;
-                position: absolute;
-                left: 0;
-                top: 0;
-                background-color: $color-grey;
-                transition: height 0.8s ease;
-                transition-delay: 1.6s;
-            }
-            &:first-child {
-                &:before {
-                    display: none;
-                }
-            }
-            &.custom {
-                &:before {
-                    height: 100%;
-                }
-            }
-        }
-    }
-    .about-me__intro {
-        p {
-            &:last-child {
-                margin: 0;
-            }
-        }
-    }
-}
-/** 4. End About me **/
-
-/** 5. Start My Resume **/
-.my-resume {
-    .my-resume__inner {
-        margin: -1rem 0 -15px;
-        .my-resume__skill--item {
-            margin: 30px 0;
-            display: flex;
-            label {
-                width: 200px;
-                display: inline-flex;
-                align-items: center;
-                &:after {
-                    content: '';
-                    display: inline-flex;
-                    width: auto;
-                    height: 1px;
-                    background-color: $color-black;
-                    flex: 1;
-                    margin: 0 10px 0 15px;
-                }
-            }
-            div {
-                span {
-                    margin: 0 3px;
-                    width: 15px;
-                    height: 15px;
-                    display: inline-block;
-                    border-radius: 50%;
-                    border: 1px solid $color-black;
-                    &.active {
-                        background-color: $color-black;
-                    }
-                }
-            }
-            &.custom {
-                opacity: 0;
-                transform: translateY(30px);
-                transition: all 1.5s ease;
-            }
-            &.is-on {
-                transform: translateY(0px);
-                opacity: 1;
-            }
-        }
-
-        .education__list {
-            .education__item {
-                margin: 20px 0 30px;
-                .education__date {
-                    margin: 0 0 5px;
-                    font-weight: 500;
-                    font-size: 16px;
-                }
-                .education__name {
-                    margin: 0 0 5px;
-                    font-size: 16px;
-                }
-                .education__subname {
-                    font-size: 16px;
-                }
-            }
-        }
-
-        .experience__list {
-            .experience__item {
-                margin: 20px 0 30px;
-                .experience__date {
-                    margin: 0 0 5px;
-                    font-weight: 500;
-                    font-size: 16px;
-                }
-                .experience__company {
-                    margin: 0 0 5px;
-                    font-size: 16px;
-                }
-                .experience__position {
-                    margin: 0 0 5px;
-                    font-size: 16px;
-                }
-                .experience__description {
-                    font-size: 16px;
-                }
-            }
-        }
-
-        .awards__list {
-            .awards__item {
-                margin: 20px 0 30px;
-                .awards__date {
-                    margin: 0 0 5px;
-                    font-weight: 500;
-                    font-size: 16px;
-                }
-                .awards__name {
-                    margin: 0 0 5px;
-                    font-size: 16px;
-                }
-                .awards__description {
-                    font-size: 16px;
-                }
-            }
-        }
-    }
-}
-/** 5. End My Resume **/
-
-/** 6. Start My Project **/
-.my-project {
-    .my-project__nav {
-        li {
-            margin: 0 5px 5px;
-            button, a {
-                padding: 5px 15px;
-                width: 100%;
-                display: flex;
-                position: relative;
-                flex: 1;
-                justify-content: space-between;
-                align-items: center;
-                background: transparent;
-                font-weight: 300;
-                color: $color-black;
-                border: 1px solid $color-black;
-                transition: all 0.3s ease;
-                &:after {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    width: 0;
-                    z-index: -1;
-                    background-color: $color-black;
-                    transition: width 0.3s ease;
-                }
-                &.active, &:hover  {
-                    text-decoration: none;
-                    color: $color-white;
-                    &:after {
-                        width: 100%;
-                    }
-                }
-            }
-        }
-    }
-    .tab-content {
-        .tab-pane {
-            &.fade {
-                transition: opacity .35s linear;
-            }
-        }
-    }
-    .project__list {
-        margin: 0 -15px -15px;
-        display: flex;
-        flex-wrap: wrap;
-        .product__item {
-            padding: 15px;
-            width: 50%;
-            figure {
-                margin: 0;
-                position: relative;
-                background-size: cover;
-                filter: grayscale(0%);
-                transition: all 1s ease;
-                .product__content {
-                    text-align: center;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    color: $color-white;
-                    background-color: #0000004d;
-                    transform: scale(0);
-                    transition: all 1s ease;
-                    a {
-                        color: $color-white;
-                        cursor: zoom-in;
-                    }
-                    .product__name {
-                        font-family: "Noto Serif Display",serif;
-                    }
-                }
-                .product__view {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: $color-white;
-                    transform: scale(1);
-                    transition: all 1s ease;
-                    a {
-                        width: 50px;
-                        height: 50px;
-                        display: inline-flex;
-                        align-items: center;
-                        justify-content: center;
-                        border-radius: 50%;
-                        font-size: 16px;
-                        background-color: $color-white;
-                        color: $color-black;
-                    }
-                }
-            }
-            &:hover {
-                figure {
-                    filter: grayscale(100%);
-                }
-                .product__content {
-                    transform: scale(1);
-                }
-                .product__view {
-                    transform: scale(0);
-                }
-            }
-        }
-    }
-}
-/** 6. End My Project **/
-
-/** 7. Start My Client **/
-.my-client {
-    .my-client__list {
-        .my-client__item {
-            text-align: center;
-            figure {
-                width: 80px;
-                height: 80px;
-            }
-            .my-client__name {
-                text-transform: uppercase;
-                font-size: 18px;
-            }
-        }
-    }
-}
-/** 7. Start My Client **/
-
-/** 8. Start My Blog **/
-.my-blog {
-    .my-blog__list {
-        margin: -30px 0 0;
-        .my-blog__item {
-            padding: 30px 0;
-            border-bottom: 1px solid #DDD;
-            &:last-child {
-                border-bottom: none;
-            }
-            .my-blog__detail {
-                cursor: pointer;
-            }
-            figure {
-                transition: all 0.5s ease;
-            }
-            h3 {
-                font-size: 20px;
-                font-weight: 400;
-            }
-            &:hover {
-                figure {
-                    box-shadow: 3px 3px 0 $color-black;
-                }
-            }
-        }
-    }
-    .my-blog__pagination {
-        margin: 30px 0 0;
-        .pagination__inner {
-            display: flex;
-            justify-content: center;
-            > a, > span {
-                margin: 0 5px;
-            }
-            .current {
-                font-weight: 400;
-                text-decoration: underline;
-            }
-        }
-    }
-    .my-blog__button {
-        a {
-            padding: 5px 15px;
-            background: transparent;
-            font-weight: 300;
-            color: $color-black;
-            border: 1px solid $color-black;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            &:after {
-                content: '';
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                width: 0;
-                z-index: -1;
-                background-color: $color-black;
-                transition: width .3s ease;
-            }
-            &:hover  {
-                text-decoration: none;
-                color: $color-white;
-                &:after {
-                    width: 100%;
-                }
-            }
-        }
-    }
-    .my-blog__popup {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 100000;
-        background-color: #000000cf;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease;
-        transition-delay: 0.5s;
-        .my-blog__popup--js & {
-            opacity: 1;
-            visibility: visible;
-        }
-        .my-blog__popup--close {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            a {
-                margin: 10px;
-                position: relative;
-                width: 25px;
-                height: 25px;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                &:after {
-                    content: '';
-                    width: 15px;
-                    height: 1px;
-                    background-color: $color-white;
-                    display: block;
-                    transform: rotate(-45deg);
-                    position: absolute;
-                }
-                &:before {
-                    content: '';
-                    width: 15px;
-                    height: 1px;
-                    background-color: $color-white;
-                    display: block;
-                    transform: rotate(45deg);
-                    position: absolute;
-                }
-            }
-        }
-        .my-blog__popup--inner {
-            background-color: $color-white;
-            height: 100%;
-            border-radius: 5px 5px 0 0;
-            overflow: scroll;
-        }
-    }
-}
-/** 8. End My Blog **/
-
-/** 9. Start Contact **/
-.contact {
-    .contact__list {
-        .contact__item {
-            i {
-                margin: 0 15px 0 0;
-                font-size: 22px;
-                width: 55px;
-                height: 55px;
-                display: inline-flex;
-                border: 1px solid;
-                align-items: center;
-                justify-content: center;
-            }
-        }
-    }
-    .contact__form {
-        .form__item {
-            margin: 0 0 20px;
-            label {
-                margin: 0 0 10px;
-                display: block;
-                font-weight: 400;
-                &.error {
-                    color: #bc8787;
-                    margin: 5px 0 0 !important;
-                    font-style: italic;
-                    font-size: 13px;
-                }
-            }
-            input, textarea {
-                padding: 10px 15px;
-                width: 100%;
-                border: 1px solid $color-black;
-                background-color: $color-white;
-                border-radius: 0;
-                -webkit-appearance: none;
-                transition: all .3s ease;
-                &:focus {
-                    outline: none;
-                    box-shadow: 2px 2px $color-black;
-                }
-                &.error {
-                    box-shadow: 2px 2px #bc8787;
-                }
-            }
-            textarea {
-                height: 200px;
-            }
-        }
-        button {
-            padding: 10px 30px;
-            background-color: $color-black;
-            color: $color-white;
-            border: none;
-            border-radius: 0;
-            -webkit-appearance: none;
-            text-transform: uppercase;
-        }
-    }
-}
-/** 9. End Contact **/
-
-/** 10 Start Footer **/
-.footer {
-    .footer__button-download {
-        padding: 8px 15px;
-        border: 1px solid;
-        font-size: 13px;
-        text-transform: uppercase;
-        cursor: pointer;
-        position: relative;
-        transition: all .3s ease;
-        &:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: 0;
-            z-index: -1;
-            background-color: $color-black;
-            transition: width .3s ease;
-        }
-        &:hover {
-            color: $color-white;
-            &:after {
-                width: 100%;
-            }
-        }
-    }
-}
-/** 10. End Footer **/
 
 /** 11. Start Single Page **/
 .single-post {
@@ -783,7 +122,6 @@ a:hover {
         margin: 0 0 10px;
         font-weight: 500;
         font-size: 48px;
-        font-family: "Noto Serif Display",serif;
     }
     .post_meta {
         display: inline-flex;
@@ -936,7 +274,6 @@ a:hover {
                     margin: 5px 0 0;
                     font-weight: 400;
                     font-size: 20px;
-                    font-family: "Noto Serif Display",serif;
                     a {
                         color: $color-black;
                     }
@@ -990,7 +327,6 @@ a:hover {
         .single-post__nav--title {
             margin: 5px 0 0;
             font-size: 26px;
-            font-family: "Noto Serif Display",serif;
             font-weight: 500;
         }
         .single-post__nav--title:hover {
@@ -1193,7 +529,6 @@ a:hover {
         font-size: 5em;
         font-weight: 500;
         line-height: 1;
-        font-family: "Noto Serif Display",serif;
     }
 }
 /*** 12. End Typography **/
@@ -1338,7 +673,7 @@ body.my-blog__popup--js {
 .highlight {
     margin: 0 0 0 1px;
     padding: 15px 0;
-    border-left: 1px solid $color-grey;
+    border-left: 1px solid $color-black;
     .highlight__item {
         padding: 0 0 0 32px;
         position: relative;
