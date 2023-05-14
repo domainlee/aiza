@@ -655,9 +655,9 @@ progress {
     max-width: 1080px;
   }
 }
-@media (min-width: 2000px) {
+@media (min-width: 1366px) {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 2000px;
+    max-width: 1366px;
   }
 }
 .row {

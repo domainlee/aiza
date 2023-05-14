@@ -29,7 +29,7 @@ Version: 1.0.0
 
 $color-white: #FFFFFF;
 $color-black: #2E2E2E;
-$color-yellow: #E8FE51;
+$color-cyan: #E8FE51;
 
 body {
     font-weight: 300;
@@ -67,6 +67,20 @@ a:hover {
 .heading-default__small {
 
 }
+.border-custom {
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 1px solid #333;
+        border-radius: 5px;
+        transform: perspective(10px) rotateX(1deg);
+    }
+}
+
 /* End Theme Default CSS */
 
 /** 2. Start Loading **/
@@ -114,6 +128,113 @@ a:hover {
     }
 }
 /** 2. End loading **/
+
+
+/** 2. Start header **/
+.header {
+    .header__logo {
+        margin: 0;
+        img {
+            margin: 60px 0;
+            height: 50px;
+        }
+    }
+    .header__menu {
+        > ul {
+            > li {
+                > a {
+                    padding: 0;
+                    color: #fff;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 0 15px;
+                    width: 50px;
+                    text-transform: uppercase;
+                    font-size: 13px;
+                    text-align: center;
+                    justify-content: center;
+                    > i {
+                        display: inline-block;
+                        width: 40px;
+                        height: 40px;
+                        background-size: 15px;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-color: #232323;
+                        border-radius: 50%;
+                        &.i-home {
+                            background-image: url("../img/nav-1.png");
+                        }
+                        &.i-about {
+                            background-image: url("../img/nav-2.png");
+                        }
+                        &.i-education {
+                            background-image: url("../img/nav-3.png");
+                        }
+                        &.i-portfolio {
+                            background-image: url("../img/nav-4.png");
+                        }
+                        &.i-blog {
+                            background-image: url("../img/nav-5.png");
+                        }
+                        &.i-contact {
+                            background-image: url("../img/nav-6.png");
+                        }
+                    }
+                    > span {
+                        padding: 5px 10px;
+                        position: absolute;
+                        display: inline-block;
+                        left: -50%;
+                        right: -50%;
+                        margin: auto;
+                        top: -45px;
+                        color: #000;
+                        border-radius: 5px;
+                        font-weight: 500;
+                        font-size: 12px;
+                        background-color: $color-cyan;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all 0.8s ease;
+                        &:after {
+                            content: '';
+                            width: 0;
+                            height: 0;
+                            border-left: 5px solid transparent;
+                            border-right: 5px solid transparent;
+                            border-top: 5px solid $color-cyan;
+                            position: absolute;
+                            left: -100%;
+                            right: -100%;
+                            margin: auto;
+                            bottom: -5px;
+                        }
+                    }
+                }
+                &:hover {
+                     span {
+                        top: -40px;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+    .header__btn-contact {
+        padding: 10px 20px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        position: relative;
+    }
+}
+/** 2. End header **/
+
+
 
 
 /** 11. Start Single Page **/
