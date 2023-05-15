@@ -78,7 +78,7 @@ a:hover {
         bottom: 0;
         border: 1px solid #333;
         border-radius: 5px;
-        transform: perspective(10px) rotateX(1deg);
+        transform: perspective(10px) rotateX(0.8deg);
         transition: all 0.6s ease;
         z-index: -1;
     }
@@ -169,28 +169,52 @@ a:hover {
                         display: inline-block;
                         width: 40px;
                         height: 40px;
-                        background-size: 15px;
-                        background-position: center;
-                        background-repeat: no-repeat;
                         background-color: #232323;
+                        transition: background-color 0.3s ease;
                         border-radius: 50%;
+                        position: relative;
+                        &:before {
+                            content: '';
+                            left: 0;
+                            right: 0;
+                            top: 0;
+                            bottom: 0;
+                            position: absolute;
+                            background-size: 15px;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            border-radius: 50%;
+                            transition: all 0.3s ease;
+                        }
                         &.i-home {
-                            background-image: url("../img/nav-1.png");
+                            &:before {
+                                background-image: url("../img/nav-1.png");
+                            }
                         }
                         &.i-about {
-                            background-image: url("../img/nav-2.png");
+                            &:before {
+                                background-image: url("../img/nav-2.png");
+                            }
                         }
                         &.i-education {
-                            background-image: url("../img/nav-3.png");
+                            &:before {
+                                background-image: url("../img/nav-3.png");
+                            }
                         }
                         &.i-portfolio {
-                            background-image: url("../img/nav-4.png");
+                            &:before {
+                                background-image: url("../img/nav-4.png");
+                            }
                         }
                         &.i-blog {
-                            background-image: url("../img/nav-5.png");
+                            &:before {
+                                background-image: url("../img/nav-5.png");
+                            }
                         }
                         &.i-contact {
-                            background-image: url("../img/nav-6.png");
+                            &:before {
+                                background-image: url("../img/nav-6.png");
+                            }
                         }
                     }
                     > span {
@@ -229,6 +253,12 @@ a:hover {
                         top: -40px;
                         opacity: 1;
                         visibility: visible;
+                    }
+                    i {
+                        background-color: $color-cyan;
+                        &:before {
+                            filter: brightness(0) invert(0);
+                        }
                     }
                 }
             }
