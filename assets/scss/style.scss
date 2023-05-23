@@ -109,7 +109,24 @@ a:hover {
         }
     }
 }
-
+.bg-line-small {
+    padding: 0 0 15px;
+    margin: 0 0 20px;
+    display: inline-block;
+    position: relative;
+    &:after {
+        content: '';
+        height: 20px;
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url("../img/bg_heading_small.png");
+    }
+}
 /* End Theme Default CSS */
 
 /** 2. Start Loading **/
@@ -304,17 +321,79 @@ a:hover {
         color: $color-white;
     }
     .home__sub {
-        width: 300px;
-        background-color: #151515;
         padding: 20px;
+        width: 280px;
+        background-color: #151515;
         border-radius: 10px;
         font-size: 14px;
         color: #999;
         position: absolute;
-        right: 0;
-        bottom: 25%;
+        right: 22%;
+        bottom: 10%;
     }
-    .home__avatar-large{
+    .home__btn-play {
+        position: absolute;
+        right: -20%;
+        top: 26%;
+        a {
+            position: relative;
+            width: 170px;
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:before {
+                content: "";
+                width: 170px;
+                height: 170px;
+                border-radius: 50%;
+                display: block;
+                background-color: #212121a3;
+                position: absolute;
+                animation: animation-circle 1s 1s infinite linear alternate;
+            }
+            &:after {
+                content: "";
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                display: block;
+                background-color: #3e3e3e70;
+                position: absolute;
+                animation: animation-circle-two 1s 1s infinite linear alternate;
+            }
+            i {
+                width: 0;
+                height: 0;
+                border-top: 10px solid rgba(0,0,0,0);
+                border-left: 15px solid $color-cyan;
+                border-bottom: 10px solid rgba(0,0,0,0);
+                display: block;
+                z-index: 1;
+            }
+        }
+    }
+    @keyframes animation-circle {
+        0% {
+            width: 170px;
+            height: 170px;
+        }
+        100% {
+            width: 160px;
+            height: 160px;
+        }
+    }
+    @keyframes animation-circle-two {
+        0% {
+            width: 80px;
+            height: 80px;
+        }
+        100% {
+            width: 70px;
+            height: 70px;
+        }
+    }
+    .home__avatar-large {
         width: 50%;
         position: absolute;
         right: 5%;
@@ -322,15 +401,36 @@ a:hover {
         background-size: contain;
         background-repeat: no-repeat;
         background-position: bottom center;
+        &:after {
+            content: "";
+            margin: auto;
+            width: 65%;
+            height: 50%;
+            display: block;
+            position: absolute;
+            top: 20%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-image: url("../img/home-bg.png");
+            background-size: contain;
+            z-index: -1;
+        }
     }
-    .home__bg {
-        position: relative;
-        top: 12%;
-        background-size: 110% auto;
-        background-position: center;
-    }
+
 }
 /** 4. End home **/
+
+/** 5. Start about **/
+.about {
+    padding: 100px 0;
+    .about__heading--small {
+        font-size: 14px;
+        font-weight: 500;
+        color: $color-cyan;
+    }
+}
+/** 5. End about **/
 
 
 
