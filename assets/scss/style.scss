@@ -63,7 +63,23 @@ a:hover {
     padding: 40px 50px;
 }
 .heading-default {
-
+    text-align: center;
+    .heading-default__small {
+        margin: 0 0 5px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #e8fe51;
+    }
+    .heading-default__title {
+        font-weight: 600;
+        font-size: 48px;
+    }
+    .heading-default__intro {
+        margin: 0 auto;
+        max-width: 800px;
+        font-size: 20px;
+        color: #747474;
+    }
 }
 .heading-default__small {
 
@@ -114,6 +130,7 @@ a:hover {
     margin: 0 0 20px;
     display: inline-block;
     position: relative;
+    font-weight: 500;
     &:after {
         content: '';
         height: 20px;
@@ -127,6 +144,43 @@ a:hover {
         background-image: url("../img/bg_heading_small.png");
     }
 }
+.i-skill {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-skill-7 {
+    background-image: url("../img/about-skill-7.png");
+}
+.icon-skill-6 {
+    background-image: url("../img/about-skill-6.png");
+}
+.i-skill-style-two {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: brightness(0) invert(1);
+    z-index: 1;
+}
+.i-figma {
+    background-image: url("../img/i-figma.png");
+}
+.i-canvas {
+    background-image: url("../img/i-canvas.png");
+}
+.i-photoshop {
+    background-image: url("../img/i-photoshop.png");
+}
+.i-sketch {
+    background-image: url("../img/i-sketch.png");
+}
+
 /* End Theme Default CSS */
 
 /** 2. Start Loading **/
@@ -428,6 +482,106 @@ a:hover {
         font-size: 14px;
         font-weight: 500;
         color: $color-cyan;
+    }
+    .about__heading {
+        margin: 0 0 30px 0;
+        font-size: 54px;
+        font-weight: 600;
+    }
+    .about__sub {
+        margin: 0 0 30px;
+        font-size: 22px;
+        color: #888;
+    }
+    .about__right {
+        position: relative;
+        .about__image {
+            width: 88%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+        }
+        .about__icon--circle {
+            margin: 0 0 0 30px;
+            width: 12%;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .about__icon--circle-two {
+            margin: 15px 0 0 20%;
+            background-size: contain;
+            width: 180px;
+            background-repeat: no-repeat;
+        }
+        .about__right--exp {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: $color-cyan;
+            position: absolute;
+            right: 0;
+            bottom: 15%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #000;
+            font-weight: 500;
+            text-align: center;
+            font-size: 20px;
+        }
+    }
+
+    .skill-style-two {
+        .skill-style-two__item {
+            padding: 50px 0;
+            text-align: center;
+            border: 2px solid #222;
+            border-radius: 10px;
+            transition: border-color 0.5s ease;
+            .skill-style-two__item--icon {
+                width: 100px;
+                height: 100px;
+                position: relative;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                &:after {
+                    content: '';
+                    background-image: url("../img/about-skill-bg.png");
+                    border-radius: 50%;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    filter: brightness(0) invert(0.1);
+                    transition: all 0.5s ease;
+                    background-size: cover;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
+                i {
+                    transition: all 0.5s ease;
+                }
+            }
+            &:hover {
+                border-color: $color-cyan;
+                .skill-style-two__item--icon {
+                    &:after {
+                        filter: brightness(1) invert(0);
+                    }
+                    i {
+                        filter: brightness(0) invert(0);
+                    }
+                }
+            }
+        }
+        .skill-style-two__item--label {
+            margin: 20px 0 0;
+            font-size: 20px;
+        }
     }
 }
 /** 5. End about **/
@@ -853,6 +1007,39 @@ a:hover {
 /*** 12. End Typography **/
 
 /** 13. Start Custom Style **/
+.skill {
+    padding: 0;
+    li {
+        padding: 50px 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $color-cyan;
+        &:last-child {
+            border-bottom: none;
+        }
+        i {
+            position: relative;
+            &:after {
+                content: '';
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 50%;
+                background-color: $color-cyan;
+                opacity: 0.2;
+            }
+        }
+        span {
+            margin: 0 0 0 20px;
+            font-size: 32px;
+            font-weight: 500;
+        }
+    }
+}
 body.my-blog__popup--js {
     overflow: hidden;
 }
