@@ -153,10 +153,10 @@ a:hover {
     background-size: contain;
 }
 .icon-skill-7 {
-    background-image: url("../img/about-skill-7.png");
+    background-image: url("../img/about-service-7.png");
 }
 .icon-skill-6 {
-    background-image: url("../img/about-skill-6.png");
+    background-image: url("../img/about-service-6.png");
 }
 .i-skill-style-two {
     display: inline-block;
@@ -548,7 +548,7 @@ a:hover {
                 align-items: center;
                 &:after {
                     content: '';
-                    background-image: url("../img/about-skill-bg.png");
+                    background-image: url("../img/about-service-bg.png");
                     border-radius: 50%;
                     display: inline-flex;
                     justify-content: center;
@@ -581,6 +581,43 @@ a:hover {
         .skill-style-two__item--label {
             margin: 20px 0 0;
             font-size: 20px;
+        }
+    }
+
+    .service__list {
+        margin: 50px 0 0;
+        .service__item {
+            padding: 50px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid $color-cyan;
+            &:first-child {
+                border-top: 1px solid $color-cyan;
+            }
+            .service__icon {
+                width: 80px;
+                height: 80px;
+                display: inline-block;
+                background-size: contain;
+                &.service__icon--wdd {
+                    background-image: url("../img/about-service-1.png");
+                }
+                &.service__icon--bds {
+                    background-image: url("../img/about-service-2.png");
+                }
+                &.service__icon--mas {
+                    background-image: url("../img/about-service-3.png");
+                }
+                &.service__icon--sos {
+                    background-image: url("../img/about-service-3.png");
+                }
+            }
+            .service__item--content {
+                p {
+                    margin: 0;
+                }
+            }
         }
     }
 }
