@@ -59,6 +59,9 @@ a:hover {
 .bg-contain {
     background-size: contain;
 }
+.bg-no-repeat {
+    background-repeat: no-repeat;
+}
 .px-50 {
     padding: 40px 50px;
 }
@@ -78,7 +81,7 @@ a:hover {
         margin: 0 auto;
         max-width: 800px;
         font-size: 20px;
-        color: #747474;
+        color: #a8a8a8;
     }
 }
 .heading-default__small {
@@ -592,14 +595,29 @@ a:hover {
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid $color-cyan;
+            transition: background-color 0.3s ease;
             &:first-child {
                 border-top: 1px solid $color-cyan;
             }
             .service__icon {
+                margin: 0 0 0 30px;
                 width: 80px;
                 height: 80px;
                 display: inline-block;
                 background-size: contain;
+                position: relative;
+                &:after {
+                    content: "";
+                    width: 40px;
+                    height: 40px;
+                    display: inline-block;
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    border-radius: 50%;
+                    background-color: $color-cyan;
+                    opacity: .2;
+                }
                 &.service__icon--wdd {
                     background-image: url("../img/about-service-1.png");
                 }
@@ -610,12 +628,108 @@ a:hover {
                     background-image: url("../img/about-service-3.png");
                 }
                 &.service__icon--sos {
-                    background-image: url("../img/about-service-3.png");
+                    background-image: url("../img/about-service-4.png");
+                }
+                &.service__icon--pds {
+                    background-image: url("../img/about-service-5.png");
                 }
             }
             .service__item--content {
+                h3 {
+                    font-size: 28px;
+                    font-weight: 500;
+                }
                 p {
                     margin: 0;
+                }
+            }
+            .service__item--number {
+                font-weight: 500;
+                color: #999;
+            }
+            .service__item--address {
+                margin: 0 30px 0 0;
+                a {
+                    display: inline-block;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    background-color: $color-black;
+                    background-image: url("../img/i-arrow.png");
+                    background-size: 20%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+            &:hover {
+                background-color: $color-cyan;
+                color: $color-black;
+                .service__icon {
+                    filter: brightness(0) invert(0);
+                    &:after {
+                        background-color: $color-black;
+                        opacity: .2;
+                    }
+                }
+                .service__item--number {
+                    color: $color-black;
+                }
+            }
+        }
+    }
+
+    .client__list {
+        .client__item {
+            padding: 40px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+            &:hover {
+                border-color: $color-cyan;
+            }
+            .client__item--head {
+                display: flex;
+                .client__item--image {
+                    figure {
+                        margin: -40px 30px 0 -40px;
+                        width: 100px;
+                    }
+                }
+                .client__item--name {
+                    span {
+                        color: $color-cyan;
+                    }
+                }
+            }
+            .client__item--content {
+                margin: 35px 0;
+                color: #b5b5b5;
+                line-height: 32px;
+            }
+            .client__item--rate {
+                display: flex;
+                align-items: center;
+                position: relative;
+                i {
+                    color: $color-cyan;
+                }
+                span {
+                    margin: 0 0 0 10px;
+                    font-size: 14px;
+                    color: #b5b5b5;
+                }
+                &:after {
+                    content: '';
+                    width: 32px;
+                    height: 32px;
+                    display: inline-block;
+                    background-image: url('../img/i-quote.png');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: 30px;
+                    position: absolute;
+                    right: 0;
                 }
             }
         }
@@ -624,7 +738,31 @@ a:hover {
 /** 5. End about **/
 
 
-
+/*** Start Footer ***/
+.footer {
+    padding: 10px 0;
+    background-color: $color-black;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    font-size: 14px;
+    .footer__phone {
+        strong {
+            display: flex;
+            align-items: center;
+            i {
+                margin: 0 5px 0 0;
+                font-size: 28px;
+            }
+        }
+    }
+    .footer__copywriter {
+        color: #a8a8a8;
+    }
+}
+/*** End Footer ***/
 
 /** 11. Start Single Page **/
 .single-post {
@@ -1280,43 +1418,29 @@ body.my-blog__popup--js {
     }
 }
 .owl-carousel  {
-    &.my-client__list {
-        .owl-item {
-            .owl-lazy {
-                max-height: initial !important;
-            }
+
+}
+.owl-carousel .owl-item .owl-lazy:not([src]), .owl-carousel .owl-item .owl-lazy[src^=""] {
+    max-height: inherit;
+}
+.owl-theme .owl-dots {
+    margin-top: 50px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .owl-dot {
+        span {
+            width: 5px !important;
+            height: 5px !important;
+            background-color: #333 !important;
         }
-        .owl-nav {
-            button {
-                position: absolute;
-                top: 35%;
-                color: #CCC !important;
-                font-size: 36px !important;
-                transition: all 0.5s ease;
-                &.owl-prev {
-                    left: -20%;
-                }
-                &.owl-next {
-                    right: -20%;
-                }
-                &:hover {
-                    color: $color-black !important;
-                    background-color: transparent !important;
-                }
-            }
-        }
-        .owl-dots {
-            .owl-dot {
-                span {
-                    margin: 5px;
-                    border: 1px solid $color-black;
-                    background-color: $color-white;
-                }
-                &.active {
-                    span {
-                        background-color: $color-black;
-                    }
-                }
+        &.active {
+            span {
+                width: 11px !important;
+                height: 11px !important;
+                background-color: $color-cyan !important;
+                border: 3px solid #000000d9 !important;
+                box-shadow: 0 0 0 1px #e8fe51;
             }
         }
     }

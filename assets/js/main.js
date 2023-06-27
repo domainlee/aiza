@@ -80,12 +80,12 @@
     var owlCarousel = function() {
         $('.my-client__js').owlCarousel({
             loop: true,
-            margin: 0,
+            margin: 20,
             dots: true,
             nav: true,
             lazyLoad: true,
             autoplay: true,
-            items: 1,
+            items: 3,
             navText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
             responsive: {
                 0: {
@@ -95,7 +95,7 @@
                     nav: false,
                 },
                 768: {
-                    nav: true,
+                    nav: false,
                 }
             }
         });
