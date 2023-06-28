@@ -99,6 +99,31 @@
                 }
             }
         });
+
+        $('.customer__list--js').owlCarousel({
+            loop: true,
+            margin: 200,
+            dots: false,
+            nav: true,
+            lazyLoad: true,
+            autoplay: true,
+            items: 5,
+            navText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+            responsive: {
+                0: {
+                    nav: false,
+                    margin: 30,
+                },
+                480: {
+                    nav: false,
+                    margin: 50,
+                },
+                768: {
+                    margin: 200,
+                    nav: false,
+                }
+            }
+        });
     };
 
     var skill = function () {

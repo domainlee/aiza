@@ -147,6 +147,33 @@ a:hover {
         background-image: url("../img/bg_heading_small.png");
     }
 }
+.heading-small {
+    padding: 0 0 15px;
+    margin: 0 0 20px;
+    display: block;
+    position: relative;
+    text-align: center;
+}
+.bg-line-large {
+    padding: 0 0 15px;
+    display: inline-block;
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #d4d4d4;
+    &:after {
+        content: '';
+        height: 20px;
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url("../img/bg_heading_large.png");
+    }
+}
 .i-skill {
     display: inline-block;
     width: 80px;
@@ -154,12 +181,43 @@ a:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-}
-.icon-skill-7 {
-    background-image: url("../img/about-service-7.png");
-}
-.icon-skill-6 {
-    background-image: url("../img/about-service-6.png");
+    position: relative;
+    &:after {
+        content: "";
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        border-radius: 50%;
+        background-color: $color-cyan;
+        opacity: .2;
+    }
+    &.icon-skill-1 {
+        background-image: url("../img/about-service-1.png");
+    }
+    &.icon-skill-2 {
+        background-image: url("../img/about-service-2.png");
+    }
+    &.icon-skill-3 {
+        background-image: url("../img/about-service-3.png");
+    }
+    &.icon-skill-4 {
+        background-image: url("../img/about-service-4.png");
+    }
+    &.icon-skill-5 {
+        background-image: url("../img/about-service-5.png");
+    }
+    &.icon-skill-6 {
+        background-image: url("../img/about-service-6.png");
+    }
+    &.icon-skill-7 {
+        background-image: url("../img/about-service-7.png");
+    }
+    &.icon-skill-8 {
+        background-image: url("../img/about-service-8.png");
+    }
 }
 .i-skill-style-two {
     display: inline-block;
@@ -599,40 +657,8 @@ a:hover {
             &:first-child {
                 border-top: 1px solid $color-cyan;
             }
-            .service__icon {
+            .i-skill {
                 margin: 0 0 0 30px;
-                width: 80px;
-                height: 80px;
-                display: inline-block;
-                background-size: contain;
-                position: relative;
-                &:after {
-                    content: "";
-                    width: 40px;
-                    height: 40px;
-                    display: inline-block;
-                    position: absolute;
-                    top: 10px;
-                    left: 10px;
-                    border-radius: 50%;
-                    background-color: $color-cyan;
-                    opacity: .2;
-                }
-                &.service__icon--wdd {
-                    background-image: url("../img/about-service-1.png");
-                }
-                &.service__icon--bds {
-                    background-image: url("../img/about-service-2.png");
-                }
-                &.service__icon--mas {
-                    background-image: url("../img/about-service-3.png");
-                }
-                &.service__icon--sos {
-                    background-image: url("../img/about-service-4.png");
-                }
-                &.service__icon--pds {
-                    background-image: url("../img/about-service-5.png");
-                }
             }
             .service__item--content {
                 h3 {
@@ -664,7 +690,7 @@ a:hover {
             &:hover {
                 background-color: $color-cyan;
                 color: $color-black;
-                .service__icon {
+                .i-skill {
                     filter: brightness(0) invert(0);
                     &:after {
                         background-color: $color-black;
@@ -734,8 +760,74 @@ a:hover {
             }
         }
     }
+
+    .customer__list {
+        .customer__item {
+            figure {
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+    }
+
 }
 /** 5. End about **/
+
+/** 6. Start education **/
+    .education {
+        .education-hero__heading--small {
+            font-size: 14px;
+            font-weight: 500;
+            color: $color-cyan;
+        }
+        .education-hero__heading {
+            font-size: 36px;
+            font-weight: 600;
+        }
+        .education-hero__content {
+            margin: 30px 0 0;
+            color: #DDD;
+        }
+        .education-hero__skills {
+            position: relative;
+            &:before {
+                content: '';
+                margin: 0 0 20px auto;
+                width: 60px;
+                height: 30px;
+                display: block;
+                background-image: url("../img/i-half-circle.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            .education-hero__skill--item {
+                padding: 25px 0;
+                display: flex;
+                align-items: center;
+                border-top: 1px solid $color-cyan;
+                &:nth-child(even) {
+                    position: relative;
+                    left: -80px;
+                }
+                .i-skill {
+                    margin: 0 20px 0 0;
+                    width: 60px;
+                    height: 60px;
+                }
+                .education-hero__skill--title {
+                    margin: 0;
+                    font-weight: 600;
+                    font-size: 24px;
+                }
+                .education-hero__skill--exp {
+                    margin: 0 0 0 auto;
+                    width: 80px;
+                }
+            }
+        }
+    }
+/** 6. End education **/
 
 
 /*** Start Footer ***/
@@ -1193,21 +1285,7 @@ a:hover {
         &:last-child {
             border-bottom: none;
         }
-        i {
-            position: relative;
-            &:after {
-                content: '';
-                width: 50px;
-                height: 50px;
-                display: inline-block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                border-radius: 50%;
-                background-color: $color-cyan;
-                opacity: 0.2;
-            }
-        }
+
         span {
             margin: 0 0 0 20px;
             font-size: 32px;
