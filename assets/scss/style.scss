@@ -822,9 +822,47 @@ a:hover {
                 }
                 .education-hero__skill--exp {
                     margin: 0 0 0 auto;
-                    width: 80px;
                 }
             }
+        }
+    }
+
+    .progress-bar-custom {
+        position: relative;
+        display: inline-block;
+        label {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $color-cyan;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        $progress-bar-stroke-width: 2.5;
+        $progress-bar-size: 70px;
+        svg {
+            height: $progress-bar-size;
+            transform: rotate(-90deg);
+            width: $progress-bar-size;
+        }
+        .progress-bar__background {
+            fill: none;
+            stroke: transparent;
+            stroke-width: $progress-bar-stroke-width;
+        }
+        .progress-bar__progress {
+            fill: none;
+            stroke: $color-cyan;
+            stroke-dasharray: 100 100;
+            stroke-dashoffset: 100;
+            stroke-linecap: round;
+            stroke-width: $progress-bar-stroke-width;
+            transition: stroke-dashoffset 1s ease-in-out;
         }
     }
 /** 6. End education **/

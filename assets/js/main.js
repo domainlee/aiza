@@ -127,19 +127,16 @@
     };
 
     var skill = function () {
-        let skill_item = $('.my-resume__skill--item');
+        let skill_item = $('.education-hero__skill--item');
         skill_item.each(function (k, v) {
             var t = $(this);
             if(isInViewport(t)) {
-                let count = t.find('div');
-                let span = count.find('span');
-                let precent = count.attr('data-precent');
-                active(span, 0, precent);
-                function active(items, index, length) {
-                    index = index % length;
-                    items.eq(index).addClass('active');
-                    setTimeout(function() {active(items, index + 1, length)}, 300);
-                }
+                $('.progress-bar-custom').each(function () {
+                    var percentageComplete = $(this).attr('data-precent');
+                    var strokeDashOffsetValue = 100 - (percentageComplete * 100);
+                    var progressBar = $(this).find(".js-progress-bar");
+                    progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
+                });
             }
         });
     }
